@@ -6,8 +6,3 @@ app = FastAPI()
 
 app.include_router(users_router, prefix="/users", tags=["users"])
 
-
-@app.on_event("startup")
-async def on_startup():
-    # Not needed if you setup a migration system like Alembic
-    await create_db_and_tables()
